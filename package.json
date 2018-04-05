@@ -1,0 +1,25 @@
+{
+  "name": "earlgrey-cli",
+  "version": "1.0.0",
+  "description": "Command line inteface for Earlgrey Framework ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brutalchrist/earlgrey-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "earlgrey",
+    "framework",
+    "nodejs"
+  ],
+  "author": "Sebastián González @brutalchrist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brutalchrist/earlgrey-cli/issues"
+  },
+  "homepage": "https://github.com/brutalchrist/earlgrey-cli#readme"
+}
