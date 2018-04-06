@@ -5,7 +5,7 @@ const clone = require('git-clone');
 
 const url_seed = 'git@github.com:acalvoa/ealgrey-seed.git';
 
-module.exports = function(name, origin){
+module.exports = function(name, origin) {
     if (!shell.which('git')) {
         shell.echo('Sorry, this script requires git');
         shell.exit(1);
@@ -31,6 +31,12 @@ module.exports = function(name, origin){
             }
         } else  {
             shell.rm('-fr', '.git');
+        }
+
+        if (shell.touch('.earlgrey').code === 0) {
+            shell.ShellString('{"package": "' + name + '"}\n').to('.earlgrey');
+        } else {
+            console.log('Error to write .earlgrey file');
         }
     });
 }
