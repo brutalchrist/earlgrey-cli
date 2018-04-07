@@ -8,13 +8,13 @@ program
     .version('0.1.0', '-v, --version')
     .command('init <name>')
     .option('-o, --origin <url>', 'git origin')
-    .action(function(name, options) {
+    .action((name, options) => {
         init(name, options.origin);
     });
 
 program
     .command('generate <type> <name>')
-    .action(function(type, name) {
+    .action((type, name) => {
         switch(type) {
             case 'controller':
                 controller(name);
