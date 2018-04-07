@@ -15,7 +15,7 @@ module.exports = function(name, origin) {
     spinner.setSpinnerString(18);
 
     spinner.start();
-    clone(url_seed, name, {}, function(error) {
+    clone(url_seed, name, {}, error => {
         spinner.stop();
         process.stdout.write('\n');
 
@@ -38,5 +38,18 @@ module.exports = function(name, origin) {
         } else {
             console.log('Error to write .earlgrey file');
         }
+
+        spinner = new Spinner('%s Deleting files');
+        spinner.setSpinnerString(18);
+        spinner.start();
+        shell.rm(
+            'src/controllers/.controllers',
+            'src/helpers/.helpers',
+            'src/models/.models',
+            'src/policies/.policies',
+            'src/types/.types'
+        );
+        spinner.stop();
+        process.stdout.write('\n');
     });
 }
