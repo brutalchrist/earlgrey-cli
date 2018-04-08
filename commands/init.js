@@ -4,7 +4,7 @@ const Spinner = require('cli-spinner').Spinner;
 const clone = require('git-clone');
 const config = require('../lib/config');
 
-const url_seed = 'git@github.com:acalvoa/ealgrey-seed.git';
+const url_seed = 'git@github.com:acalvoa/earlgrey-seed.git';
 
 module.exports = function(name, origin) {
     if (!shell.which('git')) {
