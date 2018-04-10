@@ -20,7 +20,5 @@ module.exports = name => {
         } else {
             console.log('Error to write file ' + file);
         }
-    } else {
-        console.log('The command must be excecuted in the Earlgrey project route');
     }
 }
