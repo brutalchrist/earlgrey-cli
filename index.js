@@ -3,6 +3,7 @@ const program = require('commander');
 // Commands
 const init = require('./commands/init')
 const controller = require('./commands/controller')
+const model = require('./commands/model')
 
 program
     .version('0.1.0', '-v, --version')
@@ -14,12 +15,14 @@ program
 
 program
     .command('generate <type> <name>')
-    .action((type, name) => {
+    .option('-t, --tablename <tablename>', 'only model type')
+    .action((type, name, options) => {
         switch(type) {
             case 'controller':
                 controller(name);
                 break;
             case 'model':
+                model(name, options.tablename)
                 break;
             case 'type':
                 break;
