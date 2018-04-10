@@ -5,5 +5,6 @@ import earlgrey.types.IType;
 
 public class ${name} implements IType {
 
-}`;
+}
+`;
 }

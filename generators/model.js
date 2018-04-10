@@ -12,5 +12,6 @@ import earlgrey.core.ModelCore;
 )
 public class ${name} extends ModelCore {
 
-}`;
+}
+`;
 }

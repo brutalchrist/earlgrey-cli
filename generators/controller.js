@@ -32,5 +32,6 @@ public class ${camelize(name)} extends ControllerCore {
         res.json(new JSONObject().put("response", "pong"));
         return;
     }
-}`;
+}
+`;
 }
