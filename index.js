@@ -5,6 +5,7 @@ const init = require('./commands/init')
 const controller = require('./commands/controller')
 const model = require('./commands/model')
 const policie = require('./commands/policie')
+const types = require('./commands/type');
 
 program
     .version('0.1.0', '-v, --version')
@@ -26,6 +27,7 @@ program
                 model(name, options.tablename)
                 break;
             case 'type':
+                types(name);
                 break;
             case 'policie':
                 policie(name);
