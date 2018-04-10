@@ -5,7 +5,7 @@ const capitalize = require('capitalize');
 const config = require('../lib/config');
 const utils = require('../lib/utils');
 
-const policie = require('../generators/policie');
+const policie = require('../generators/policy');
 
 module.exports = name => {
     if (utils.isEarlegrey()) {
@@ -15,7 +15,7 @@ module.exports = name => {
             shell.ShellString(policie(capitalize(name), config.getPackage())).to(file);
 
             if (shell.find(file).code === 0) {
-                console.log('The ' + capitalize(camelize(name)) + ' policie was created');
+                console.log('The ' + capitalize(camelize(name)) + ' policy was created');
             }
         } else {
             console.log('Error to write file ' + file);

@@ -4,8 +4,9 @@ const program = require('commander');
 const init = require('./commands/init')
 const controller = require('./commands/controller')
 const model = require('./commands/model')
-const policie = require('./commands/policie')
+const policy = require('./commands/policy')
 const types = require('./commands/type');
+const helper = require('./commands/helper');
 
 program
     .version('0.1.0', '-v, --version')
@@ -29,13 +30,14 @@ program
             case 'type':
                 types(name);
                 break;
-            case 'policie':
-                policie(name);
+            case 'policy':
+                policy(name);
                 break;
             case 'helper':
+                helper(name);
                 break;
             default:
-                console.log('Generate type is undefined. Types: controller | model | type | policie | helper ');
+                console.log('Generate type is undefined. Types: controller | model | type | policy | helper ');
                 break;
         }
     });
