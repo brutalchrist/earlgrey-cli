@@ -4,6 +4,7 @@ const program = require('commander');
 const init = require('./commands/init')
 const controller = require('./commands/controller')
 const model = require('./commands/model')
+const policie = require('./commands/policie')
 
 program
     .version('0.1.0', '-v, --version')
@@ -27,6 +28,7 @@ program
             case 'type':
                 break;
             case 'policie':
+                policie(name);
                 break;
             case 'helper':
                 break;
