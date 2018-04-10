@@ -1,4 +1,4 @@
-module.exports = function(name, package, tablename) {
+module.exports = (name, package, tablename) => {
     return `package ${package}.model;
 
 import earlgrey.annotations.Model;
