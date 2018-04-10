@@ -1,12 +1,14 @@
 const shell = require('shelljs');
 const camelize = require('camelize');
 const capitalize = require('capitalize');
+
 const config = require('../lib/config');
+const utils = require('../lib/utils');
 
 const model = require('../generators/model');
 
 module.exports = (name, tablename = '') => {
-    if (shell.find('.', '.earlgrey').code === 0) {
+    if (utils.isEarlegrey()) {
         const file = 'src/models/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {

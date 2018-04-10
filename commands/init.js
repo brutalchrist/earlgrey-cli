@@ -2,6 +2,7 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 const Spinner = require('cli-spinner').Spinner;
 const clone = require('git-clone');
+
 const config = require('../lib/config');
 
 const url_seed = 'git@github.com:acalvoa/earlgrey-seed.git';
