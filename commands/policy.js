@@ -8,8 +8,9 @@ const utils = require('../lib/utils');
 const policie = require('../generators/policy');
 
 module.exports = name => {
-    if (utils.isEarlegrey()) {
-        const file = 'src/policies/' + capitalize(camelize(name)) + '.java';
+    const path = utils.earlgreyRoot();
+    if (path) {
+        const file = path + 'src/policies/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {
             shell.ShellString(policie(capitalize(name), config.getPackage())).to(file);

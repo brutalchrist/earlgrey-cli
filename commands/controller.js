@@ -8,8 +8,9 @@ const utils = require('../lib/utils');
 const controller = require('../generators/controller');
 
 module.exports = name => {
-    if (utils.isEarlegrey()) {
-        const file = 'src/controllers/' + capitalize(camelize(name)) + '.java';
+    const path = utils.earlgreyRoot();
+    if (path) {
+        const file = path + 'src/controllers/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {
             shell.ShellString(controller(capitalize(name), config.getPackage())).to(file);
