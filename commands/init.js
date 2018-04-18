@@ -6,7 +6,7 @@ const config = require('../lib/config');
 
 const url_seed = 'https://github.com/acalvoa/earlgrey-seed.git';
 
-module.exports = function(name, origin) {
+module.exports = (name, origin) => {
     if (!shell.which('git')) {
         shell.echo('Sorry, this script requires git');
         shell.exit(1);
