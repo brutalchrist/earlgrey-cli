@@ -3,9 +3,11 @@ const chalk = require('chalk');
 const Spinner = require('cli-spinner').Spinner;
 const clone = require('git-clone');
 
-const url_seed = 'git@github.com:acalvoa/ealgrey-seed.git';
+const config = require('../lib/config');
 
-module.exports = function(name, origin){
+const url_seed = 'https://github.com/acalvoa/earlgrey-seed.git';
+
+module.exports = function(name, origin) {
     if (!shell.which('git')) {
         shell.echo('Sorry, this script requires git');
         shell.exit(1);
@@ -15,7 +17,7 @@ module.exports = function(name, origin){
     spinner.setSpinnerString(18);
 
     spinner.start();
-    clone(url_seed, name, {}, function(error) {
+    clone(url_seed, name, {}, error => {
         spinner.stop();
         process.stdout.write('\n');
 
@@ -32,5 +34,31 @@ module.exports = function(name, origin){
         } else  {
             shell.rm('-fr', '.git');
         }
+
+        if (shell.touch('.earlgrey').code === 0) {
+            shell.ShellString('{"package": "' + name + '"}\n').to('.earlgrey');
+        } else {
+            console.log('Error to write .earlgrey file');
+        }
+
+        spinner = new Spinner('%s Deleting files');
+        spinner.setSpinnerString(18);
+        spinner.start();
+        shell.rm(
+            'src/controllers/.controllers',
+            'src/helpers/.helpers',
+            'src/models/.models',
+            'src/policies/.policies',
+            'src/types/.types'
+        );
+        spinner.stop();
+        process.stdout.write('\n');
+
+        spinner = new Spinner('%s Patching Kernel');
+        spinner.setSpinnerString(18);
+        spinner.start();
+        shell.sed('-i', 'package test', 'package ' + config.getPackage(), 'src/core/Kernel.java');
+        spinner.stop();
+        process.stdout.write('\n');
     });
 }
