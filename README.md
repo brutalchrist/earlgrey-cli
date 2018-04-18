@@ -1,5 +1,5 @@
 # earlgrey-cli
-Command line inteface for [Earlgrey Framework]()
+Command line interface for [Earlgrey Framework]()
 
 ## Instalation
 
