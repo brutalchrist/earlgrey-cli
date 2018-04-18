@@ -9,7 +9,7 @@ const types = require('./commands/type');
 const helper = require('./commands/helper');
 
 program
-    .version('0.1.0', '-v, --version')
+    .version('1.0.0', '-v, --version')
     .command('init <name>')
     .option('-o, --origin <url>', 'git origin')
     .action((name, options) => {

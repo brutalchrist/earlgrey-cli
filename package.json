@@ -1,7 +1,7 @@
 {
   "name": "earlgrey-cli",
   "version": "1.0.0",
-  "description": "Command line inteface for Earlgrey Framework ",
+  "description": "Command line interface for Earlgrey Framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,10 +28,8 @@
   "dependencies": {
     "camelize": "1.0.0",
     "capitalize": "1.0.0",
-    "chalk": "2.3.2",
     "cli-spinner": "0.2.8",
     "commander": "2.15.1",
-    "figlet": "1.2.0",
     "git-clone": "0.1.0",
     "shelljs": "0.8.1"
   }

@@ -1,5 +1,4 @@
 const shell = require('shelljs');
-const chalk = require('chalk');
 const Spinner = require('cli-spinner').Spinner;
 const clone = require('git-clone');
 
