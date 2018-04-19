@@ -9,7 +9,7 @@ const controller = require('../generators/controller');
 
 module.exports = name => {
     const path = utils.earlgreyRoot();
-    if (path) {
+    if (path !== false) {
         const file = path + 'src/controllers/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {

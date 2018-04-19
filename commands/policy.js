@@ -9,7 +9,7 @@ const policie = require('../generators/policy');
 
 module.exports = name => {
     const path = utils.earlgreyRoot();
-    if (path) {
+    if (path !== false) {
         const file = path + 'src/policies/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {

@@ -9,7 +9,7 @@ const helper = require('../generators/helper');
 
 module.exports = name => {
     const path = utils.earlgreyRoot();
-    if (path) {
+    if (path !== false) {
         const file = path + 'src/helpers/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {
