@@ -9,7 +9,7 @@ const types = require('../generators/type');
 
 module.exports = name => {
     const path = utils.earlgreyRoot();
-    if (path) {
+    if (path !== false) {
         const file = path + 'src/types/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {

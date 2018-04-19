@@ -9,7 +9,7 @@ const model = require('../generators/model');
 
 module.exports = (name, tablename = '') => {
     const path = utils.earlgreyRoot();
-    if (path) {
+    if (path !== false) {
         const file = path + 'src/models/' + capitalize(camelize(name)) + '.java';
 
         if (shell.touch(file).code === 0) {
