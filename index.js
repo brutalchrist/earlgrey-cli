@@ -12,8 +12,9 @@ program
     .version('1.0.2', '-v, --version')
     .command('init <name>')
     .option('-o, --origin <url>', 'git origin')
+    .option('-e, --eclipse', 'Eclipse')
     .action((name, options) => {
-        init(name, options.origin);
+        init(name, options.origin, options.eclipse);
     });
 
 program
